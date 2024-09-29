@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FuchiPay - Complejos</title>
+    <!-- Api deslizamiento -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <!-- estilos -->
+    <link rel="stylesheet" href="style.css">
+    <!-- iconos -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- mapa -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <!--  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+       
+</head>
+<body>
+    <!-- Pantalla de presentación con el logo -->
+    <div id="splash-screen">
+        <img src="img/fuchipay-Photoroom.png" alt="Logo de la Aplicación">
+    </div>
+    <!-- Comienzo de laa Sidebar y Menu -->
+    <nav class="sidebar close">
+        <!-- Header -->
+        <header>
+            <div class="text logo">
+                <span class="name">FuchiPay</span>
+                <span class="profe">Reserva Canchas Aqui</span>
+            </div>
+            <i class="bx bx-menu toggle"></i>
+        </header>
+        <!-- Sidebar -->
+        <div class="menu-bar">
+            <div class="menu">
+
+                <li class="search-box">
+                    <i class="bx bx-search icon"></i>
+                    <input type="text" placeholder=" Buscar....">
+                </li>
+
+                <ul class="menu-links">
+
+                    <li class="nav-link">
+                        <a href="menu.html">
+                            <i class="bx bx-home-alt icon"></i>
+                            <span class="text nav-text">Inicio</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="reservas.html">
+                            <i class="bx bx-calendar icon"></i>
+                            <span class="text nav-text">Mis Reservas</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="complejos.html">
+                            <i class="bx bx-football icon"></i>
+                            <span class="text nav-text">Complejos</span>
+                        </a>
+                    </li>
+                    
+                    <li class="nav-link">
+                        <a href="cuenta.html">
+                            <i class="bx bx-user icon"></i>
+                            <span class="text nav-text">Mi Cuenta</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="reseñas.html">
+                            <i class="bx bx-group icon"></i>
+                            <span class="text nav-text">Reseñas</span>
+                        </a>
+                    </li> 
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class="bx bx-cctv icon"></i>
+                            <span class="text nav-text">Videos</span>
+                        </a>
+                    </li> 
+                </ul>
+            </div>
+           <!-- Logout -->
+            <div class="bottom-content">
+                <li class="">
+                    <a href="loginyregister.html " onclick="confirmLogout(event)">
+                        <i class="bx bx-log-out icon"></i>
+                        <span class="text nav-text">Salir</span>
+                    </a>
+                </li>
+                <!-- Cambio de Modo -->
+                <li class="mode">
+                    <div class="sun-moon">
+                        <i class="bx bx-moon icon moon"></i>
+                        <i class="bx bx-sun icon sun"></i>
+                    </div>
+                    <span class="mode-text text">Modo Oscuro</span>
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+            </div> 
+        </div>
+    </nav>
+    <!-- Comienzo del Menu  -->
+    <section class="home">
+        <div class="text">
+            <a class="atexto" href="menu.html">FuchiPay</a>
+        </div>
+        <!-- Logo -->
+        <img src="img/fuchipay-Photoroom.png" alt="Imagen" class="img-logo">
+        <br>
+        <br>
+        <!-- mapa -->
+        <h1 class="atexto" style="text-align: center; color: #FFFFFF; justify-content: center;"> Ubicacion de los Complejos Deportivos</h1>
+        <div class="mapa-contenedor">
+        <div style="width: 100%; height: 100%; border-radius: 15px;" id="map"></div>
+        </div>
+        <br>
+        <hr style="margin: 20px;">
+        <!-- Cards -->
+        <div class="deposito">
+
+            <h3 class="title"> Complejos Deportivos</h3>
+         
+            <div class="complejos-deposito">
+         
+               <div class="complejo" data-name="p-1">
+                  <img src="img/donbosco.jpg" alt="">
+                  <h3>Don Bosco</h3>
+                  <div class="price">$2100</div>
+               </div>
+         
+               <div class="complejo" data-name="p-2">
+                  <img src="img/la 10.jpg" alt="">
+                  <h3>La 10</h3>
+                  <div class="price">$2100</div>
+               </div>
+         
+               <div class="complejo" data-name="p-3">
+                  <img src="img/tercer tiempo.jpg" alt="">
+                  <h3>Tercer Tiempo</h3>
+                  <div class="price">$2100</div>
+               </div>
+         
+               <div class="complejo" data-name="p-4">
+                  <img src="img/depositphotos_150618060-stock-photo-soccer-ball-on-grass.jpg" alt="">
+                  <h3>Complejo Centro</h3>
+                  <div class="price">$2100</div>
+               </div>
+         
+               <div class="complejo" data-name="p-5">
+                  <img src="img/tercer tiempo.jpg" alt="">
+                  <h3>Planeta Futbol</h3>
+                  <div class="price">$2.00</div>
+               </div>
+         
+               <div class="complejo" data-name="p-6">
+                  <img src="img/donbosco.jpg" alt="">
+                  <h3>FuchiBol</h3>
+                  <div class="price">$2.00</div>
+               </div>
+         
+            </div>
+         
+         </div>
+         
+         <div class="complejos-preview">
+         
+            <div class="preview" data-target="p-1">
+               <i class="fas fa-times"></i>
+               <img src="img/donbosco.jpg" alt="">
+               <h3>Don Bosco</h3>
+               <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                  <span>( 250 )</span>
+               </div>
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, dolorem.</p>
+               <div class="price">$2100</div>
+               <div class="buttons">
+                 <button  type="submit" class="buy">Reservar</button>
+               </div>
+            </div>
+         
+            <div class="preview" data-target="p-2">
+               <i class="fas fa-times"></i>
+               <img src="img/la 10.jpg" alt="">
+               <h3>La 10</h3>
+               <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                  <span>( 250 )</span>
+               </div>
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, dolorem.</p>
+               <div class="price">$2100</div>
+               <div class="buttons">
+                  <button class="buy">Reservar</button>
+               </div>
+            </div>
+         
+            <!-- Aquí seguirán los otros previews -->
+         </div>
+
+        <br>
+        <footer>
+            <div class="container">
+                <p>&copy; 2024 FuchiPay - Todos los derechos reservados.</p>
+                <p>Contacto: proyectoloscampeones@gmail.com | Tel: +598 91 409 154</p>
+            </div>
+        </footer>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="script.js"></script>
+</body>
+
+<script>
+    // Inicializar el mapa centrado en una ubicación (Latitud, Longitud)
+    var map = L.map('map').setView([-32.31865, -58.07081], 13 ); 
+  
+    // Agregar el mapa base (en este caso, de OpenStreetMap)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: ''
+    }).addTo(map);
+  
+    // Agregar un marcador en una ubicación específica
+    var marker = L.marker([-32.294488, -58.080060]).addTo(map)
+    .bindPopup('Este es un marcador en La 10.').openPopup();
+    var marker = L.marker([-32.313504, -58.098042]).addTo(map)
+    .bindPopup('Este es un marcador en Don Bosco.').openPopup();
+    var marker = L.marker([-32.292810, -58.081348]).addTo(map)
+    .bindPopup('Este es un marcador en Tercer Tiempo.').openPopup();
+    
+       
+       
+  </script>
+</html>
+    
