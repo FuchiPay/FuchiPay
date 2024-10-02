@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FuchiPay - Iniciar Sesión</title>
     <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body >
         <header> 
@@ -16,7 +17,11 @@
             <form class="sign-in">
                 <h1 style="justify-content: center; text-align: center;">FuchiPay</h1>
                 <h2>Iniciar Sesion</h2>
-                
+                <select style="text-align: center;" class="button" name="" id="">
+                    <option value="">Administrador</option>
+                    <option value="">Cliente</option>
+                </select>
+                <br>
                 <span>Use su correo y contraseña</span>
                 <div class="contenedor-input">
                     <ion-icon name="mail-outline"></ion-icon>
@@ -34,9 +39,9 @@
         <div class="contenedor-form">
             <form class="sign-up">
                 <h2>Registrarse</h2>
-               <br>
+                    
                <select style="text-align: center;" class="button" name="" id="">
-                  <option value=""> Admin</option>
+                  <option value=""> Administrador</option>
                   <option value="">Cliente</option>
 
                </select>
@@ -45,6 +50,10 @@
                 <div class="contenedor-input">
                     <ion-icon name="person-outline"></ion-icon>
                     <input type="text" placeholder="Nombre">
+                </div>
+                <div class="contenedor-input">
+                    <ion-icon name="football-outline"></ion-icon>
+                    <input type="text" placeholder="Complejo">
                 </div>
                 <div class="contenedor-input">
                     <ion-icon name="mail-outline"></ion-icon>

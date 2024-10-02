@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FuchiPay - Iniciar Sesión</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header> 
+        <img class="img-logo" src="img/fuchipay-Photoroom.png" alt="logo">
+    </header>
+
+    <div class="contenedor">
+        <!-- Formulario de Iniciar Sesión -->
+        <div class="contenedor-form">
+            <form class="sign-in" method="POST" action="login.php">
+                <h1 style="justify-content: center; text-align: center;">FuchiPay</h1>
+                <h2>Iniciar Sesión</h2>
+                <select style="text-align: center;" class="button" name="tipo_usuario">
+                    <option value="administrador">Administrador</option>
+                    <option value="comun">Cliente</option>
+                </select>
+                <br>
+                <span>Use su correo y contraseña</span>
+                <div class="contenedor-input">
+                    <ion-icon name="mail-outline"></ion-icon>
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="contenedor-input">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                    <input type="password" name="password" placeholder="Password" required>
+                </div>
+                <a href="#">¿Olvidaste tu contraseña?</a>
+                <button type="submit" class="button">INICIAR SESIÓN</button>
+            </form>
+        </div>
+
+        <!-- Formulario de Registro -->
+        <div class="contenedor-form">
+            <form class="sign-up" method="POST" action="register.php">
+                <h2>Registrarse</h2>
+                <select style="text-align: center;" name="tipo_usuario" id="tipo_usuario" class="button" onchange="mostrarCamposAdmin()">
+                    <option value="comun">Cliente</option>
+                    <option value="administrador">Administrador</option>
+                </select>
+                <br>
+                <span>Use su correo electrónico para registrarse</span>
+                <div class="contenedor-input">
+                    <ion-icon name="person-outline"></ion-icon>
+                    <input type="text" name="nombre" placeholder="Nombre" required>
+                </div>
+
+                <!-- Campos adicionales para Administradores -->
+                <div id="campos-admin" style="display: none;">
+                    <div class="contenedor-input">
+                        <ion-icon name="person-outline"></ion-icon>
+                        <input type="text" name="apellido" placeholder="Apellido">
+                    </div>
+                    <div class="contenedor-input">
+                        <ion-icon name="football-outline"></ion-icon>
+                        <input type="text" name="complejo" placeholder="Complejo">
+                    </div>
+                </div>
+
+                <div class="contenedor-input">
+                    <ion-icon name="mail-outline"></ion-icon>
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="contenedor-input">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                    <input type="password" name="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="button">REGISTRARSE</button>
+            </form>
+        </div>
+
+        <!-- Sección de bienvenida -->
+        <div class="contenedor-welcome">
+            <div class="welcome-sign-up welcome">
+                <h3>¡Bienvenido!</h3>
+                <p>Ingrese sus datos personales para usar todas las funciones de la Aplicación</p>
+                <button class="button" id="btn-sign-up">Registrarse</button>
+            </div>
+            <div class="welcome-sign-in welcome">
+                <h3>¡Hola!</h3>
+                <p>Regístrese con sus datos personales para usar todas las funciones del sitio</p>
+                <button class="button" id="btn-sign-in">Iniciar Sesión</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script para mostrar los campos adicionales solo si es Administrador -->
+    <script>
+    function mostrarCamposAdmin() {
+        var tipoUsuario = document.getElementById("tipo_usuario").value;
+        var camposAdmin = document.getElementById("campos-admin");
+        if (tipoUsuario === "administrador") {
+            camposAdmin.style.display = "block";
+        } else {
+            camposAdmin.style.display = "none";
+        }
+    }
+    </script>
+
+    <script src="app.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

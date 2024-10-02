@@ -6,7 +6,7 @@ function conectar_bd(){
 
 $servidor = "localhost";
 $bd = "fuchipay";
-$usuario = "root ";
+$usuario = "root";
 $pass = "";
 
 //definir la conexion usando las variables.
@@ -27,3 +27,4 @@ return $conn;
 
 
 $con= conectar_bd();
+

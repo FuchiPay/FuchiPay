@@ -870,6 +870,11 @@ footer {
  @media (max-width:991px){
     html{
        font-size: 55%;
+       
     }
  }
- 
+
+ .foot_container {
+    font-size: 400%;
+  }
+

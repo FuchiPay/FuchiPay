@@ -9,4 +9,5 @@
  btnSignUp.addEventListener("click",()=>{
     contenedor.classList.add("toggle");
  });
-
+   
+ 
