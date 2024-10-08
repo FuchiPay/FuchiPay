@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FuchiPay - Menu</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <!-- Pantalla de presentación con el logo -->
+    <div id="splash-screen">
+        <img src="img/fuchipay-Photoroom.png" alt="Logo de la Aplicación">
+    </div>
+
+    <nav class="sidebar close">
+        <header>
+            <div class="text logo">
+                <span class="name">FuchiPay</span>
+                <span class="profe">Reserva Canchas Aqui</span>
+            </div>
+            <i class="bx bx-menu toggle"></i>
+        </header>
+        
+        <div class="menu-bar">
+            <div class="menu">
+                <li class="search-box">
+                    <i class="bx bx-search icon"></i>
+                    <input type="text" placeholder="  Buscar...">
+                </li>
+
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class="bx bx-home-alt icon"></i>
+                            <span class="text nav-text">Inicio</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class="bx bx-calendar icon"></i>
+                            <span class="text nav-text">Reservas</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class="bx bx-football icon"></i>
+                            <span class="text nav-text">Complejos</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class="bx bx-user icon"></i>
+                            <span class="text nav-text">Cuenta</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class="bx bx-group icon"></i>
+                            <span class="text nav-text">Foro</span>
+                        </a>
+                    </li> 
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class="bx bx-cctv icon"></i>
+                            <span class="text nav-text">Videos</span>
+                        </a>
+                    </li> 
+                </ul>
+            </div>
+            
+            <div class="bottom-content">
+                <li class="">
+                    <a href="loginyregister.html" onclick="confirmLogout(event)">
+                        <i class="bx bx-log-out icon"></i>
+                        <span class="text nav-text">Salir</span>
+                    </a>
+                </li>
+                <li class="mode">
+                    <div class="sun-moon">
+                        <i class="bx bx-moon icon moon"></i>
+                        <i class="bx bx-sun icon sun"></i>
+                    </div>
+                    <span class="mode-text text">Modo Oscuro</span>
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+            </div> 
+        </div>
+    </nav>
+
+    <section class="reservas-section">
+        <!-- Aquí se listarán las reservas del cliente -->
+        <div class="reserva-card">
+            <h2>Complejo A - Fútbol 5</h2>  
+            <p><strong>Fecha:</strong> 25/09/2024</p>
+            <p><strong>Hora:</strong> 18:00</p>
+            <p><strong>Estado:</strong> Confirmada</p>
+        </div>
+
+        <div class="reserva-card">
+            <h2>Complejo B - Fútbol 7</h2>
+            <p><strong>Fecha:</strong> 28/09/2024</p>
+            <p><strong>Hora:</strong> 20:00</p>
+            <p><strong>Estado:</strong> Confirmada</p>
+        </div>
+
+        <div class="reserva-card">
+            <h2>Complejo C - Fútbol 11</h2>
+            <p><strong>Fecha:</strong> 30/09/2024</p>
+            <p><strong>Hora:</strong> 19:00</p>
+            <p><strong>Estado:</strong> Pendiente</p>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

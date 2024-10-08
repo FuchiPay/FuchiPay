@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reseñas - FuchiPay</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f9f9f9;
+        }
+        .carousel-item {
+            padding: 20px;
+        }
+        .review-list {
+            max-height: 150px;
+            overflow-y: auto;
+            margin-bottom: 15px;
+        }
+        .stars {
+            color: #FFD700; /* Color dorado */
+        }
+        .carousel-control {
+            color: #007bff; /* Color de las flechas */
+            font-size: 2rem; /* Tamaño de las flechas */
+        }
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: rgba(255, 255, 255, 0.5); /* Fondo blanco semi-transparente */
+            border-radius: 50%; /* Flechas redondeadas */
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Reseñas de Complejos</h1>
+        <div id="complexCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <!-- Complejo 1 -->
+                <div class="carousel-item active">
+                    <div class="card">
+                        <img src="img/donbosco.jpg" class="card-img-top" alt="Complejo Deportivo A">
+                        <div class="card-header">
+                            Complejo Deportivo A
+                        </div>
+                        <div class="card-body">
+                            <div class="review-list">
+                                <div class="review">
+                                    <div class="review-author">Juan Pérez</div>
+                                    <div class="stars">★★★★★</div>
+                                    <div class="review-text">¡Gran lugar para jugar!</div>
+                                </div>
+                                <div class="review">
+                                    <div class="review-author">Ana García</div>
+                                    <div class="stars">★★★★☆</div>
+                                    <div class="review-text">El servicio al cliente fue excepcional.</div>
+                                </div>
+                            </div>
+                            <form class="form-inline">
+                                <input type="text" class="form-control mr-2" placeholder="Tu nombre" id="author1" required>
+                                <input type="number" class="form-control mr-2" min="1" max="5" placeholder="Calificación" id="rating1" required>
+                                <textarea class="form-control mr-2" placeholder="Escribe tu reseña" id="review1" required></textarea>
+                                <button type="submit" class="btn btn-primary" id="submit1">Enviar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- Complejo 2 -->
+                <div class="carousel-item">
+                    <div class="card">
+                        <img src="img/complex2.jpg" class="card-img-top" alt="Complejo Deportivo B">
+                        <div class="card-header">
+                            Complejo Deportivo B
+                        </div>
+                        <div class="card-body">
+                            <div class="review-list">
+                                <div class="review">
+                                    <div class="review-author">Luis Gómez</div>
+                                    <div class="stars">★★★★☆</div>
+                                    <div class="review-text">Excelente experiencia, lo recomiendo.</div>
+                                </div>
+                            </div>
+                            <form class="form-inline">
+                                <input type="text" class="form-control mr-2" placeholder="Tu nombre" id="author2" required>
+                                <input type="number" class="form-control mr-2" min="1" max="5" placeholder="Calificación" id="rating2" required>
+                                <textarea class="form-control mr-2" placeholder="Escribe tu reseña" id="review2" required></textarea>
+                                <button type="submit" class="btn btn-primary" id="submit2">Enviar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- Complejo 3 -->
+                <div class="carousel-item">
+                    <div class="card">
+                        <img src="img/complex3.jpg" class="card-img-top" alt="Complejo Deportivo C">
+                        <div class="card-header">
+                            Complejo Deportivo C
+                        </div>
+                        <div class="card-body">
+                            <div class="review-list">
+                                <div class="review">
+                                    <div class="review-author">María López</div>
+                                    <div class="stars">★★★★★</div>
+                                    <div class="review-text">Increíbles instalaciones y muy buen ambiente.</div>
+                                </div>
+                                <div class="review">
+                                    <div class="review-author">Carlos Díaz</div>
+                                    <div class="stars">★★★★☆</div>
+                                    <div class="review-text">Muy buena atención, volveré sin duda.</div>
+                                </div>
+                            </div>
+                            <form class="form-inline">
+                                <input type="text" class="form-control mr-2" placeholder="Tu nombre" id="author3" required>
+                                <input type="number" class="form-control mr-2" min="1" max="5" placeholder="Calificación" id="rating3" required>
+                                <textarea class="form-control mr-2" placeholder="Escribe tu reseña" id="review3" required></textarea>
+                                <button type="submit" class="btn btn-primary" id="submit3">Enviar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- Agrega más complejos aquí -->
+            </div>
+            <a class="carousel-control-prev" href="#complexCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Anterior</span>
+            </a>
+            <a class="carousel-control-next" href="#complexCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Siguiente</span>
+            </a>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Agregar funcionalidad para enviar reseñas
+        document.querySelectorAll('.form-inline').forEach((form, index) => {
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const author = document.getElementById(`author${index + 1}`).value;
+                const rating = document.getElementById(`rating${index + 1}`).value;
+                const reviewText = document.getElementById(`review${index + 1}`).value;
+
+                const reviewList = form.previousElementSibling;
+
+                const newReview = document.createElement('div');
+                newReview.classList.add('review');
+                newReview.innerHTML = `
+                    <div class="review-author">${author}</div>
+                    <div class="stars">${'★'.repeat(rating) + '☆'.repeat(5 - rating)}</div>
+                    <div class="review-text">${reviewText}</div>
+                `;
+
+                reviewList.appendChild(newReview);
+                form.reset();
+            });
+        });
+    </script>
+</body>
+</html>
