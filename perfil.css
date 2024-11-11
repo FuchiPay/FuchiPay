@@ -1,0 +1,102 @@
+
+    /* Estilos generales del cuerpo */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Color de fondo */
+}
+
+/* Contenedor central */
+.container {
+    width: 400px;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Estilo de la foto de perfil */
+.profile-pic-container {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Icono sobre la imagen */
+.icon-camera {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+}
+
+/* Estilo para el ícono de cambiar contraseña */
+.icon-password {
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+/* Estilo de los formularios */
+form {
+    margin-top: 20px;
+    display: block;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Botón de envío */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #24a50f ;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #119e16;
+}
+
+
+.hidden {
+    display: none; /* Clase para ocultar elementos */
+}
+
+/* Estilos para el perfil */
+.profile-container {
+    padding: 20px;
+    /* Otros estilos para el contenedor del perfil */
+}
+

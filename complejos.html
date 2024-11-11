@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FuchiPay - Complejos</title>
+    <!-- Api deslizamiento -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <!-- estilos -->
+    <link rel="stylesheet" href="style.css">
+    <!-- iconos -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- mapa -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <!--  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+       
+</head>
+<body>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 FuchiPay - Todos los derechos reservados.</p>
+            <p>Contacto: proyectoloscampeones@gmail.com | Tel: +598 91 409 154</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+
+</body>
+<script>
+    // Inicializar el mapa centrado en una ubicación (Latitud, Longitud)
+    var map = L.map('map').setView([-32.31865, -58.07081], 13 ); 
+  
+    // Agregar el mapa base (en este caso, de OpenStreetMap)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: ''
+    }).addTo(map);
+  
+    // Agregar un marcador en una ubicación específica
+    var marker = L.marker([-32.294488, -58.080060]).addTo(map)
+    .bindPopup('Este es un marcador en La 10.').openPopup();
+    var marker = L.marker([-32.313504, -58.098042]).addTo(map)
+    .bindPopup('Este es un marcador en Don Bosco.').openPopup();
+    var marker = L.marker([-32.292810, -58.081348]).addTo(map)
+    .bindPopup('Este es un marcador en Tercer Tiempo.').openPopup();
+    
+// Selección de elementos
+const infoSection = document.querySelector('.info-section');
+const canchasSection = document.querySelector('.canchas-section');
+const btnInfo = document.getElementById('btn-info');
+const btnCanchas = document.getElementById('btn-canchas');
+
+// Función para mostrar la sección de información y ocultar la de canchas
+btnInfo.addEventListener('click', () => {
+    infoSection.style.display = 'block';
+    canchasSection.style.display = 'none';
+});
+
+// Función para mostrar la sección de canchas y ocultar la de información
+btnCanchas.addEventListener('click', () => {
+    infoSection.style.display = 'none';
+    canchasSection.style.display = 'block';
+}); 
+
+ // Agregar funcionalidad para enviar reseñas
+ document.querySelectorAll('.form-inline').forEach((form, index) => {
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const author = document.getElementById(`author${index + 1}`).value;
+                const rating = document.getElementById(`rating${index + 1}`).value;
+                const reviewText = document.getElementById(`review${index + 1}`).value;
+
+                const reviewList = form.previousElementSibling;
+
+                const newReview = document.createElement('div');
+                newReview.classList.add('review');
+                newReview.innerHTML = `
+                    <div class="review-author">${author}</div>
+                    <div class="stars">${'★'.repeat(rating) + '☆'.repeat(5 - rating)}</div>
+                    <div class="review-text">${reviewText}</div>
+                `;
+
+                reviewList.appendChild(newReview);
+                form.reset();
+            });
+        });
+
+  </script>
+</html>
+    

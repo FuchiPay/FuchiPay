@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FuchiPay - Menu</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    
+
+</head>
+<body>
+      <!-- Pantalla de presentación con el logo -->
+      <div id="splash-screen">
+        <img src="img/fuchipay-Photoroom.png" alt="Logo de la Aplicación">
+     </div>
+     <!-- Barra Lateral -->
+    <div class="menu">
+        <ion-icon  name="menu-outline"></ion-icon>
+        <ion-icon  name="close-circle-outline"></ion-icon>
+    </div>
+       
+       <div class="barra-lateral">
+
+             <div>
+                <div class="nombre-pagina">
+                    <ion-icon id="cloud" name="location-outline"></ion-icon>
+                    <span>FuchiPay</span>
+                   </div>
+                   <button class="boton">
+                    <ion-icon name="search-outline"></ion-icon>
+                    <input  style="width: 90%; height: 90%; border-radius: 10px;" type="text" id="search-box" placeholder=" Buscar...">
+                   </button>
+             </div>
+
+           <nav class="navegacion">
+               <ul>  
+                   
+                   <li>
+                       <a href="menu.html">
+                       <ion-icon name="home-outline"></ion-icon>
+                       <span> Inicio</span>
+                       </a>
+                   </li>
+
+                   <li>
+                    <a href="reservas.html">
+                    <ion-icon name="calendar-outline"></ion-icon>
+                    <span>Reservas</span>
+                    </a>
+                    </li>
+
+                    <li>
+                        <a href="complejos.html">
+                        <ion-icon name="football-outline"></ion-icon>
+                        <span>Complejos</span>
+                        </a>
+                    </li>
+
+                    <li>    
+                        <a href="perfil_view.php">
+                        <ion-icon name="person-circle-outline"></ion-icon>
+                        <span>Mi Cuenta</span>
+                        </a>
+                    </li>
+
+
+                    <li>    
+                        <a href=""  onclick="confirmLogout(event)">
+                        <ion-icon name="log-out-outline"></ion-icon>
+                        <span>Salir</span>
+                        </a>
+                    </li>
+                     
+                    
+               </ul>
+           </nav>
+
+          <div>
+
+            <div class="linea"></div>
+
+              <div class="modo-oscuro">
+                 <div class="info">
+                     <ion-icon name="moon-outline"></ion-icon>
+                     <span>Dark Mode</span>
+                 </div>
+                 <div class="switch">
+                     <div class="base">
+                         <div class="circulo">
+ 
+                         </div>
+                     </div>
+                 </div>
+            </div>
+            <div class="usuario">
+             <img src="img/fuchipay-Photoroom.png" alt="">
+             <div class="info-usuario">
+                 <div class="nombre-email">
+                     <span class="nombre"> maxi</span>
+                     <span class="email">FuchiPay@gmail.com</span>
+                 </div>
+                <a style="color: black;" href="perfil_view.php">
+                    <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+                </a>
+             </div>
+           </div>
+        </div>
+    </div>
+ 
+    <main>
+    <!-- Comienzo del Menu  -->
+      
+    <div class="text">
+        <a class="atexto" href="menu.html">FuchiPay</a>
+    </div>
+    <!-- Logo -->
+    <img src="img/fuchipay-Photoroom.png" alt="Imagen" class="img-logo">
+    <br>
+    <!-- Carrusel -->
+    
+    <!-- Cartas -->
+    <div class="container swiper">
+        <div class="card-wrapper">
+            <ul class="card-list swiper-wrapper">
+             <li class="card-item swiper-slide">
+                <a href="complejos.html" class="card-link">
+                    <img src="img/donbosco.jpg" alt="Card Image" class="card-image">
+                    <p class="badge">Don Bosco</p>
+                    <h2 class="card-title">
+                        El Complejo Deportivo Don Bosco ubicado en la ciudad de Paysandú,
+                        es uno de lo mas populares a la hora de reservar canchas sintéticas, 
+                        cuentan con distintos tipos ya sean de futbol 5 o 7.
+                    </h2>
+                    <button  href = "complejos.html" class='card-button 
+                    bx bx-right-arrow-alt'></button>
+                </a>
+             </li>
+             <li class="card-item swiper-slide">
+                <a href="complejos.html" class="card-link">
+                    <img src="img/tercer tiempo.jpg" alt="Card Image" class="card-image">
+                    <p class="badge">Tercer  Tiempo</p>
+                    <h2 class="card-title">
+                        El Complejo Deportivo Tercer Tiempo ubicado en la ciudad de Paysandú,
+                        es uno de lo mas populares a la hora de reservar canchas de padel techadas
+                        y cancha de futbol sintética.
+                    </h2>
+                    <button href = "complejos.html" class='card-button 
+                    bx bx-right-arrow-alt'></button>
+                </a>
+             </li>
+             <li class="card-item swiper-slide">
+                <a href="complejos.html" class="card-link">
+                    <img src="img/la 10.jpg" alt="Card Image" class="card-image">
+                    <p class="badge">La 10</p>
+                    <h2 class="card-title">
+                         El Complejo Deportivo La 10 ubicado en la ciudad de Paysandú,
+                         es uno de lo mas populares a la hora de reservar canchas sintéticas
+                         de futbol 5 y 7; ademas de contar con varios servicios mas .
+                    </h2>
+                    <button href = "complejos.html" class='card-button 
+                    bx bx-right-arrow-alt'></button>
+                </a>
+             </li>
+             <li class="card-item swiper-slide">
+                <a href="complejos.html" class="card-link">
+                     <img src="img/donbosco.jpg" alt="Card Image" class="card-image">
+                    <p class="badge">Don Bosco</p>
+                    <h2 class="card-title">El Complejo Deportivo Don Bosco...</h2>
+                    <button href = "complejos.html" class='card-button 
+                    bx bx-right-arrow-alt'></button>
+                </a>
+             </li>
+             <li class="card-item swiper-slide">
+                <a href="complejos.html" class="card-link">
+                    <img src="img/donbosco.jpg" alt="Card Image" class="card-image"> 
+                    <p class="badge">Don Bosco</p>
+                    <h2 class="card-title">El Complejo Deportivo Don Bosco...</h2>
+                    <button href = "complejos.html" class='card-button 
+                    bx bx-right-arrow-alt'></button>
+                </a>
+             </li> 
+            </ul>
+            <br>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    </main>
+
+    <footer>
+        <div class="foot_container">
+            <p>&copy; 2024 FuchiPay - Todos los derechos reservados.</p>
+            <p>Contacto: proyectoloscampeones@gmail.com | Tel: +598 91 409 154</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

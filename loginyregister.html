@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FuchiPay - Registro e Iniciar Sesión</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header> 
+        <img class="img-logo" src="img/fuchipay-Photoroom.png" alt="logo">
+    </header>
+
+    <div class="contenedor">
+        <!-- Formulario de Iniciar Sesión -->
+        <div class="contenedor-form">
+            <form class="sign-in" method="POST" action="login.php">
+                <h1 style="justify-content: center; text-align: center;">FuchiPay</h1>
+                <h2>Iniciar Sesión</h2>
+                <select style="text-align: center;" name="tipo_usuario" id="tipo_usuario" class="button" onchange="mostrarCamposAdmin()">
+                    <option value="comun">Cliente</option>
+                    <option value="administrador">Administrador</option>
+                </select>
+                <span>Use su correo y contraseña</span>
+                <div class="contenedor-input">
+                    <ion-icon name="mail-outline"></ion-icon>
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="contenedor-input">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                    <input type="password" name="password" id="password" placeholder="Contraseña" required>
+                    <i class="bx bx-show" id="togglePassword" style="cursor: pointer;"></i>
+                </div>
+                <a href="solicitar_recuperacion.php">¿Olvidaste tu contraseña?</a>
+                <button type="submit" class="button">INICIAR SESIÓN</button>
+            </form>
+        </div>
+
+        <!-- Formulario de Registro -->
+        <div class="contenedor-form">
+            <form class="sign-up" method="POST" action="register.php">
+                <h2 style="margin-top: 20px;">Registrarse</h2>
+                <span>Use su correo electrónico para registrarse</span>
+                <div class="contenedor-input">
+                    <ion-icon name="person-outline"></ion-icon>
+                    <input type="text" name="nombre" placeholder="Nombre" required>
+                </div>
+
+                <div class="contenedor-input">
+                    <ion-icon name="person-outline"></ion-icon>
+                    <input type="text" name="apellido" placeholder="Apellido" required>
+                </div>
+
+                <div class="contenedor-input">
+                    <ion-icon name="mail-outline"></ion-icon>
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="contenedor-input">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                    <input type="password" name="password" id="registerPassword" placeholder="Contraseña" required>
+                    <i class="bx bx-show" id="toggleRegisterPassword" style="cursor: pointer;"></i>
+                </div>
+                <div id="campos-admin" style="display: none;">
+                </div>
+                <button type="submit" class="button">REGISTRARSE</button>
+            </form>
+        </div>
+
+        <!-- Sección de bienvenida -->
+        <div class="contenedor-welcome">
+            <div class="welcome-sign-up welcome">
+                <h3>¡Bienvenido!</h3>
+                <p>Ingrese sus datos personales para usar todas las funciones de la Aplicación</p>
+                <button class="button" id="btn-sign-up">Registrarse</button>
+            </div>
+            <div class="welcome-sign-in welcome">
+                <h3>¡Hola!</h3>
+                <p>Regístrese con sus datos personales para usar todas las funciones del sitio</p>
+                <button class="button" id="btn-sign-in">Iniciar Sesión</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para mensajes -->
+    <div id="modal-message" class="modal">
+        <div class="modal-content">
+            <p id="modal-text"></p>
+            <a href="loginyregister.html" id="modal-link">Volver al Login</a>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+
+        // Alternar visibilidad de la contraseña
+        const togglePasswordVisibility = (inputId, iconId) => {
+            const passwordInput = document.getElementById(inputId);
+            const toggleIcon = document.getElementById(iconId);
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                toggleIcon.classList.remove("bx-show");
+                toggleIcon.classList.add("bx-hide");
+            } else {
+                passwordInput.type = "password";
+                toggleIcon.classList.remove("bx-hide");
+                toggleIcon.classList.add("bx-show");
+            }
+        };
+
+        document.getElementById("togglePassword").addEventListener("click", () => {
+            togglePasswordVisibility("password", "togglePassword");
+        });
+
+        document.getElementById("toggleRegisterPassword").addEventListener("click", () => {
+            togglePasswordVisibility("registerPassword", "toggleRegisterPassword");
+        });
+
+        function mostrarModal(mensaje, enlace = false) {
+            const modal = document.getElementById("modal-message");
+            const modalText = document.getElementById("modal-text");
+            const modalLink = document.getElementById("modal-link");
+
+            modalText.textContent = mensaje;
+            modalLink.style.display = enlace ? "block" : "none";
+            modal.style.display = "flex";
+
+            setTimeout(() => {
+                modal.style.display = "none";
+            }, 10000);
+        }
+
+        // Mostrar el modal si hay un parámetro de éxito en la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('success')) {
+            const successType = urlParams.get('success');
+            let message = '';
+
+            if (successType === 'registered') {
+                message = 'Registro completado';
+            }
+
+            mostrarModal(message, true);
+            // Eliminar el parámetro de éxito de la URL sin recargar
+            window.history.replaceState({}, document.title, window.location.pathname);
+        }
+    // Mostrar el modal si hay un parámetro de error en la URL
+     if (urlParams.has('error')) {
+    const errorType = urlParams.get('error');
+    let message = '';
+    
+    if (errorType === 'incorrect_password') {
+        message = 'La contraseña es incorrecta';
+    } else if (errorType === 'no_account') {
+        message = 'No existe una cuenta asociada a este correo';
+    } else if (errorType === 'registration_error') {
+        message = 'Error en el registro';
+    } else if (errorType === 'email_registered') {
+        message = 'El correo electrónico ya está registrado, vuelva a intentarlo';
+    }
+
+    mostrarModal(message, true);
+    // Eliminar el parámetro de error de la URL sin recargar
+    window.history.replaceState({}, document.title, window.location.pathname);
+    }
+        
+    </script>
+
+    <script src="app.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
