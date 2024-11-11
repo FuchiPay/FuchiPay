@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+</head>
+<body>
+<header>
+      <!-- Botón de retroceso -->
+<button onclick="history.back()" class="back-button" style="cursor: pointer; position: absolute; top: 10px; margin-right: 1600px; ">
+    <i class='bx bx-arrow-back' style="font-size: 40px;"></i>
+</button>
+</header>
+
+    
+    <div class="slider">
+
+        <div class="list">
+
+            <div class="item">
+                <img src="img/donbosco.jpg" alt="">
+
+                <div class="content">
+                    <div class="title">Complejo Deportivo</div>
+                    <div class="type">Don Bosco</div>
+                    <div class="description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Deleniti temporibus quis eum consequuntur voluptate quae
+                        doloribus distinctio. Possimus, sed recusandae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, aut.
+                    </div>
+                    <div class="button">
+                        <button class="reserve-btn" onclick="showReservationForm()">RESERVAR</button>
+                     <button class="info-btn reserve-btn" onclick="showInfoModal()">Información</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="img/la10.webp" alt="">
+
+                <div class="content">
+                    <div class="title">Complejo Deportivo</div>
+                    <div class="type">La 10</div>
+                    <div class="description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Deleniti temporibus quis eum consequuntur voluptate quae
+                        doloribus distinctio. Possimus, sed recusandae. Lorem ipsum 
+                        dolor sit amet consectetur adipisicing elit. Sequi, aut.
+                    </div>
+                    <div class="button">
+                        <button>RESERVAR</button>
+                        <button class="info-btn" onclick="showInfoModal()">Información</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="img/TERCERTIEMPO.jpeg" alt="">
+
+                <div class="content">
+                    <div class="title">Complejo Deportivo</div>
+                    <div class="type">Tercer Tiempo</div>
+                    <div class="description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti temporibus quis eum consequuntur voluptate quae doloribus distinctio. Possimus, sed recusandae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, aut.
+                    </div>
+                    <div class="button">
+                        <button>RESERVAR</button>
+                        <button class="info-btn" onclick="showInfoModal()">Información</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="img/DONBOSCO1.jpg" alt="">
+
+                <div class="content">
+                    <div class="title">Complejo Deportivo</div>
+                    <div class="type">Complejo Centro</div>
+                    <div class="description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti temporibus quis eum consequuntur voluptate quae doloribus distinctio. Possimus, sed recusandae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, aut.
+                    </div>
+                    <div class="button">
+                        <button>RESERVAR</button>
+                        <button class="info-btn" onclick="showInfoModal()">Información</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="thumbnail">
+
+            <div class="item">
+                <img src="img/donbosco.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="img/la10.webp" alt="">
+            </div>
+            <div class="item">
+                <img src="img/TERCERTIEMPO.jpeg" alt="">
+            </div>
+            <div class="item">
+                <img src="img/DONBOSCO1.jpg" alt="">
+            </div>
+
+        </div>
+
+
+        <div class="nextPrevArrows">
+            <button class="prev"> < </button>
+            <button class="next"> > </button>
+        </div>
+
+    </div>
+    <div id="reservationModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <h2>Formulario de Reserva</h2>
+            <form>
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="date">Fecha de Reserva:</label>
+                <input type="date" id="date" name="date" required>
+                
+                <label for="time">Hora:</label>
+                <input type="time" id="time" name="time" required>
+                
+                <button type="submit">Confirmar Reserva</button>
+            </form>
+        </div>
+    </div>
+    
+
+        <!-- Modal de Información -->
+    <div id="infoModal" class="info-modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeInfoModal()">&times;</span>
+            <div class="info-section">
+                <h3>Información del Complejo</h3>
+                <p><strong><i class='bx bx-current-location'></i> Ubicación:</strong> Dirección</p>
+                <p><strong><i class='bx bxs-time-five'></i> Horario:</strong> Lunes a Lunes, 16:00 - 1:00</p>
+                <p><strong><i class='bx bxs-phone'></i> Contacto:</strong> +598 1234 5678</p>
+                <br>
+                <div class="servicios">
+                    <p><strong><i class='bx bx-calendar-star'></i> Servicios:</strong><br>
+                        <i class='bx bxs-shower'></i> Duchas 
+                        <i class='bx bx-shopping-bag'></i> Cantinas
+                    </p>
+                </div>
+                <p><strong><i class='bx bx-calendar-star'></i> Actividades:</strong> Fútbol</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="app.js"></script>
+</body>
+</html>
